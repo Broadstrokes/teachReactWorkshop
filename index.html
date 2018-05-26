@@ -12,12 +12,24 @@
 </head>
 <body>
 	<div id='react-container'></div>
-    <script type='text/babel'>               
+    <script type='text/babel'>
+        class Checkbox extends React.Component {
+            render() { 
+            return (
+                    <div>
+                        <input type='checkbox'/>
+                    </div>
+                )
+            }
+        }
+
         const Welcome = ({ firstName, lastName, year }) => {
             return (
                 <div>
                     <h2>Hello {firstName} {lastName}</h2>
                     <p>You are enrolled in React class of {year}</p>
+                    <p>Enroll in next class?</p>
+                    <Checkbox />
                 </div>
             )
         }
