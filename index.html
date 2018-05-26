@@ -13,11 +13,11 @@
 <body>
 	<div id='react-container'></div>
     <script type='text/babel'>               
-        const Welcome = (props) => {
+        const Welcome = ({ firstName, lastName, year }) => {
             return (
                 <div>
-                    <h2>Hello {props.firstName} {props.lastName}</h2>
-                    <p>You are enrolled in React class of {props.year}</p>
+                    <h2>Hello {firstName} {lastName}</h2>
+                    <p>You are enrolled in React class of {year}</p>
                 </div>
             )
         }
