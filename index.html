@@ -12,18 +12,20 @@
 </head>
 <body>
 	<div id='react-container'></div>
-    <script type='text/babel'>      
-    
-        const Banner = () => (
-
-            <div id="fancy">
-                <h1 className='white'>Welcome To React</h1>
-                <p className='white'>Enjoy your day!</p>
-            </div>
-        )
+    <script type='text/babel'>               
+        class Welcome extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h2>Hello {this.props.firstName} {this.props.lastName}</h2>
+                        <p>You are enrolled in React class of {this.props.year}</p>
+                    </div>
+                )
+            }
+        }
 
 		ReactDOM.render(
-            <Banner />,
+            <Welcome firstName='Jim' lastName='Raynor' year={2018} />,
             document.getElementById('react-container')
 		)
 	</script>
