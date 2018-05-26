@@ -14,10 +14,23 @@
 	<div id='react-container'></div>
     <script type='text/babel'>
         class Checkbox extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+                    checked: true
+                }
+            }
+
             render() { 
+            
+            let msg = ''
+            if (this.state.checked) msg = 'selected'
+            else msg = 'not selected'
+
             return (
                     <div>
                         <input type='checkbox'/>
+                        <p><b>You have {msg} to enroll in the next class!</b></p>
                     </div>
                 )
             }
