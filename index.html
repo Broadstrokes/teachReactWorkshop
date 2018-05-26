@@ -39,7 +39,9 @@
 
             return (
                     <div>
-                        <input type='checkbox' onChange={this.handleCheck}/>
+                        <input type='checkbox' 
+                            onChange={this.handleCheck}
+                            defaultChecked={this.state.checked} />
                         <p><b>You have {msg} to enroll in the next class!</b></p>
                     </div>
                 )
