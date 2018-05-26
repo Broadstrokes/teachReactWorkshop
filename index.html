@@ -12,9 +12,15 @@
 </head>
 <body>
 	<div id='react-container'></div>
-	<script type='text/babel'>		
-	
-        const Banner = () => <h1>Welcome To React</h1>
+    <script type='text/babel'>      
+    
+        const Banner = () => (
+
+            <div id="fancy">
+                <h1 className='white'>Welcome To React</h1>
+                <p className='white'>Enjoy your day!</p>
+            </div>
+        )
 
 		ReactDOM.render(
             <Banner />,
