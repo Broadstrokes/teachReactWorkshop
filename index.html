@@ -13,15 +13,13 @@
 <body>
 	<div id='react-container'></div>
     <script type='text/babel'>               
-        class Welcome extends React.Component {
-            render() {
-                return (
-                    <div>
-                        <h2>Hello {this.props.firstName} {this.props.lastName}</h2>
-                        <p>You are enrolled in React class of {this.props.year}</p>
-                    </div>
-                )
-            }
+        const Welcome = (props) => {
+            return (
+                <div>
+                    <h2>Hello {props.firstName} {props.lastName}</h2>
+                    <p>You are enrolled in React class of {props.year}</p>
+                </div>
+            )
         }
 
 		ReactDOM.render(
