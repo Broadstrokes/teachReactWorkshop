@@ -5,64 +5,28 @@
     <meta charset='utf-8'>
 	<script type='text/javascript' src='https://unpkg.com/react@16/umd/react.development.js'></script>
 	<script type='text/javascript' src='https://unpkg.com/react-dom@16/umd/react-dom.development.js'></script>
-	<script type='text/javascript' src='https://unpkg.com/babel-standalone@6.15.0/babel.min.js'></script>
-    <style type='stylesheet/css'>
-        #fancy { background-color: gray; }
-        .white { color: white; }
+    <style type='text/css'>
+        #myDiv { 
+            background-color: red;
+            height: 500px;
+            width: 500px;
+        }
     </style>
+    <script type='text/javascript' src='https://unpkg.com/babel-standalone@6.15.0/babel.min.js'></script>
 </head>
 <body>
 	<div id='react-container'></div>
     <script type='text/babel'>
-        class Checkbox extends React.Component {
-            constructor(props) {
-                super(props)
-                
-                this.state = {
-                    checked: true
-                }
-
-                this.handleCheck = this.handleCheck.bind(this)
-            }
-            
-            handleCheck() {
-                this.setState({
-                    checked: !this.state.checked
-                })
-            }
-
-
-            render() { 
-            
-            let msg = ''
-            if (this.state.checked) msg = 'selected'
-            else msg = 'not selected'
-
-            return (
-                    <div>
-                        <input type='checkbox' 
-                            onChange={this.handleCheck}
-                            defaultChecked={this.state.checked} />
-                        <p><b>You have {msg} to enroll in the next
-                        class!</b></p>
-                    </div>
+        class Box extends React.Component {
+            render() {
+                return (
+                    <div id='myDiv'></div>
                 )
             }
         }
 
-        const Welcome = ({ firstName, lastName, year }) => {
-            return (
-                <div>
-                    <h2>Hello {firstName} {lastName}</h2>
-                    <p>You are enrolled in React class of {year}</p>
-                    <p>Enroll in next class?</p>
-                    <Checkbox />
-                </div>
-            )
-        }
-
 		ReactDOM.render(
-            <Welcome firstName='Jim' lastName='Raynor' year={2018} />,
+            <Box />,
             document.getElementById('react-container')
 		)
 	</script>
