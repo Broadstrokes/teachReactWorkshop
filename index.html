@@ -18,19 +18,45 @@
 	<div id='react-container'></div>
     <script type='text/babel'>
         class Box extends React.Component {
-            componentWillMount() {
-                { /* This is a great place to load data or do things before 
-                    DOM renders for 1st time*/ }
-                alert('component is about be mount')
+            constructor(props) {
+                super(props)
+                { /* 
+                    Responsible for setting our initial state
+                    State will be changed later using a custom method
+                 */ }
+                
+                this.state = {
+                    style: { 
+                        backgroundColor: 'grey',
+                        height: '100px',
+                        width: '100px'
+                    }
+                }
+
+                this.toggleBoxBackgroundColor = this.toggleBoxBackgroundColor.bind(this)
             }
 
-            componentDidMount() {
-                alert('component has mounted')
+            componentDidUpdate() {
+                { /* Do something here after the component has updated */ }
+                alert('component has updated');
+            }
+
+            toggleBoxBackgroundColor() {
+                this.setState({
+                    style: {
+                        ...this.state.style, 
+                        backgroundColor: this.state.style.backgroundColor === 'blue' ? 'gray' : 'blue'
+                    }
+                })
             }
 
             render() {
                 return (
-                    <div id='myDiv'></div>
+                    <div 
+                        id='myDiv' 
+                        style={this.state.style}
+                        onClick={this.toggleBoxBackgroundColor}>
+                    </div>
                 )
             }
         }
