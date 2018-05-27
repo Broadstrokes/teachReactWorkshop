@@ -18,6 +18,16 @@
 	<div id='react-container'></div>
     <script type='text/babel'>
         class Box extends React.Component {
+            componentWillMount() {
+                { /* This is a great place to load data or do things before 
+                    DOM renders for 1st time*/ }
+                alert('component is about be mount')
+            }
+
+            componentDidMount() {
+                alert('component has mounted')
+            }
+
             render() {
                 return (
                     <div id='myDiv'></div>
